@@ -1,0 +1,26 @@
+🚫 .gitignore
+# Python artefacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.dist-info/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Secrets
+.env
+sk-kLSeGS.2c7344ead2cefd7f9f74d60e3d307cbc68fc1290b39863e01dbedc6f70d262ea
+
+# Large data (PDFs, indexes, metadata)
+abyss_feed/
+abyss_index.faiss
+abyss_meta.json
+
+# OS junk
+.DS_Store
+Thumbs.db
