@@ -3,10 +3,10 @@ import streamlit as st
 import faiss
 from sentence_transformers import SentenceTransformer
 
-from .config import *
-from .index import load_prebuilt_index, process_pdfs
-from .pdf_utils import pdf_to_text, split_chunks
-from .api_client import query_morpheus
+from src.config import *
+from src.index import load_prebuilt_index, process_pdfs
+from src .pdf_utils import pdf_to_text, split_chunks
+from src.api_client import query_morpheus
 
 
 def answer_query(query: str, index: faiss.IndexFlatIP, meta: List[dict],
