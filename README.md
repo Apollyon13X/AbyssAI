@@ -1,263 +1,372 @@
-# ☠ AbyssAI – Doctor Apollyon
+ # ☠ AbyssAI - Local AI Knowledge Base 🌪️
 
-*“From the cryptic corridors of the internet to the hidden sigils of occult lore, Doctor Apollyon guides the way.”*
-
-A **local-first**, privacy-focused Retrieval-Augmented Generation (RAG) system powered by Streamlit and Ollama for educational ethical hacking and cybersecurity research.
+A private, uncensored AI assistant that builds a searchable knowledge base from your PDF documents using local models.
 
 ---
 
-## Features
-
-- 📚 **Index any PDF collection**: Scans `abyss_feed/` directory for manuals, guides, and research papers
-- 🔍 **Smart chunking**: Overlapping text chunks for better context retention
-- 🧠 **Local embeddings**: Uses `sentence-transformers/all-MiniLM-L6-v2`
-- 🤖 **Uncensored AI**: Integrates with local Ollama models (llama2-uncensored, wizard-vicuna, etc.)
-- 💀 **Dark aesthetic**: Skull-themed UI with customizable branding
-- 🔒 **100% local**: No cloud APIs required, perfect for sensitive research
+## ⚠️ URL Access Note
+The scraping attempt for `http://localhost:8501**` failed because this is a **local development address** that runs on your machine, not a public website. Once you start AbyssAI, you'll access it at **http://localhost:8501** in your own browser.
 
 ---
 
-## 🚀 Quick Start (Recommended: Local Installation)
+## 📋 Prerequisites
 
-### Prerequisites
-
-- **Python 3.11** (3.10+ supported)
-- **Ollama** installed and running: https://ollama.ai
-- At least **4GB RAM** (8GB+ recommended for larger models)
-- PDF files (ethical hacking manuals, security guides, etc.)
-
-### Step-by-Step Setup
-
-#### **1. Clone & Enter**
-```bash
-git clone https://github.com/Apollyon13X/abyssai.git
-cd abyssai
-```
-
-#### **2. Run Bootstrap Script**
-```bash
-# Linux / macOS
-chmod +x scripts/bootstrap.sh
-./scripts/bootstrap.sh
-
-# Windows (PowerShell)
-# First install Python 3.11 from python.org
-# Then:
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-#### **3. Add Your PDFs**
-Place your ethical hacking PDFs in the `abyss_feed/` directory:
-```bash
-mkdir -p abyss_feed
-cp ~/Downloads/hacking-guide.pdf abyss_feed/
-```
-
-#### **4. Start Ollama**
-In a **separate terminal**:
-```bash
-ollama serve
-```
-
-Pull an uncensored model if needed:
-```bash
-ollama pull llama2-uncensored
-# Alternative: ollama pull wizard-vicuna-uncensored
-```
-
-#### **5. Launch Doctor Apollyon**
-```bash
-# Activate venv if not already active
-source .venv/bin/activate  # Linux/macOS
-# .venv\Scripts\activate  # Windows
-
-streamlit run src/main.py
-```
-
-Visit **http://localhost:8501**
-
----
-
-## 📖 Usage Guide
-
-### First Time Setup
-1. Upload PDFs via the web interface OR place them in `abyss_feed/`
-2. Click **"Process PDFs"** to build the vector index (one-time per PDF set)
-3. Wait for "✅ Knowledge base ready!"
-
-### Asking Questions
-1. Type your question (e.g., "Explain buffer overflow exploitation")
-2. Click **"Summon Apollyon"**
-3. Doctor Apollyon will search the PDFs and provide an answer with citations
-
-### Managing the Knowledge Base
-- **Add PDFs**: Use the uploader or drag files into `abyss_feed/`
-- **Rebuild index**: Click "Process PDFs" again after adding new files
-- **Clear everything**: Delete `abyss_index.faiss`, `abyss_meta.json`, and PDFs
-
----
-
-## 🔧 Configuration
-
-Create a `.env` file in the project root to override settings:
-
-```env
-OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama2-uncensored
-OLLAMA_TIMEOUT=120
-CHUNK_SIZE=500
-EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
-```
-
----
-
-## 🐳 Alternative: Docker Setup
-
-If you prefer Docker (requires Ollama on host):
-```bash
-# Build image
-docker build -t abyssai .
-
-# Run container (mount PDFs and Ollama)
-docker run -it --rm \
-  -p 8501:8501 \
-  -v $(pwd)/abyss_feed:/app/abyss_feed \
-  -v $(pwd)/data:/app/data \
-  -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
-  abyssai
-```
-
----
-
-## 📁 Project Structure
-
-```
-abyssai/
-├── abyss_feed/          # Your PDFs (gitignored)
-├── src/
-│   ├── main.py         # Streamlit UI
-│   ├── config.py       # Configuration
-│   ├── index.py        # FAISS indexing logic
-│   ├── pdf_utils.py    # PDF text extraction
-│   └── api_client.py   # Ollama integration
-├── scripts/
-│   └── bootstrap.sh    # Setup script
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
-
----
-
-## 🔐 Security & Privacy
-
-- **No data leaves your machine**: All processing is local
-- **Secrets gitignored**: API keys (if any) belong in `.env`
-- **Ollama models**: Run completely offline after downloading
-- **PDF scanning**: Only reads files you explicitly provide
-
----
-
-## 💻 OS-Specific Notes
+### All Platforms
+- **Python 3.8+** installed
+- **Git** installed
+- **Ollama** installed and working
+- At least **4GB RAM** (8GB recommended)
+- **PDF files** to build your knowledge base
 
 ### Linux (Ubuntu/Debian)
 ```bash
-# Install Python 3.11
+# Install system dependencies
 sudo apt update
-sudo apt install python3.11 python3.11-venv
+sudo apt install python3 python3-pip python3-venv git curl
 
 # Install Ollama
 curl -fsSL https://ollama.ai/install.sh | sh
 ```
 
-### macOS
+### Windows
+- **Python**: Download from [python.org](https://www.python.org/downloads/) (check "Add to PATH" during install)
+- **Git**: Download from [git-scm.com](https://git-scm.com/download/win)
+- **Ollama**: Download installer from [ollama.ai](https://ollama.ai/)
+- **Windows Terminal** (recommended, from Microsoft Store)
+
+### Mac
 ```bash
-# Install Python via Homebrew
-brew install python@3.11
+# Install Homebrew if not present
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install dependencies
+brew install python git
 
 # Install Ollama
 brew install ollama
 ```
 
-### Windows 10/11
-1. Install Python 3.11 from [python.org](https://python.org)
-2. Install Ollama from [ollama.ai](https://ollama.ai)
-3. Use PowerShell for all commands
-4. Run Ollama from Start Menu, then keep it running
-
 ---
 
-## 🍺 Model Recommendations
+## 🚀 Installation Guide
 
-For uncensored ethical hacking education:
+### 🐧 Linux Setup
 
-| Model | Size | Quality | Speed |
-|-------|------|---------|-------|
-| `llama2-uncensored` | 7B | Good | Fast |
-| `wizard-vicuna-uncensored` | 13B | Better | Medium |
-| `solar` | 10.7B | Excellent | Medium |
-| `mixtral` | 46.7B | Best | Slow (needs 16GB+ VRAM) |
+#### Step 1: Clone the Repository
+```bash
+git clone https://github.com/yourusername/abyssai.git
+cd abyssai
+```
 
-Pull with: `ollama pull <model-name>`
+#### Step 2: Create Virtual Environment
+```bash
+# Remove any broken venv first
+rm -rf .venv
 
----
+# Create fresh venv
+python3 -m venv .venv
 
-## 🛠️ Troubleshooting
+# Activate (Linux syntax - IMPORTANT!)
+source .venv/bin/activate
+```
 
-| Problem | Solution |
-|---------|----------|
-| **"Cannot connect to Ollama"** | Verify `ollama serve` is running in another terminal |
-| **Model not found** | Run `ollama pull llama2-uncensored` |
-| **Slow indexing** | Normal for many PDFs. Uses CPU embedding |
-| **Out of memory** | Reduce `CHUNK_SIZE` or use a smaller Ollama model |
-| **PDFs not processing** | Check PDFs are text-based (not scanned images) |
-| **Import errors** | Re-run `pip install -r requirements.txt` in venv |
+#### Step 3: Install Dependencies
+```bash
+# Upgrade pip first
+pip install --upgrade pip
 
----
+# Install requirements
+pip install -r requirements.txt
+```
 
-## 🎓 Educational Use
+#### Step 4: Make Bootstrap Executable
+```bash
+chmod +x scripts/bootstrap.sh
+./scripts/bootstrap.sh
+```
 
-This platform is designed for:
-- Security researchers studying attack vectors
-- Students learning ethical hacking techniques
-- CTF participants researching challenges
-- Educators building custom training materials
+#### Step 5: Create Data Directory
+```bash
+mkdir -p abyss_feed
+```
 
-**⚠️ Legal Notice**: Only use on systems you own or have explicit permission to test.
-
----
-
-## 📜 License
-
-MIT License - See LICENSE file. Use responsibly.
-
----
-
-## 🔮 Future Enhancements
-
-- [ ] GPU acceleration for embeddings
-- [ ] Multi-language PDF support
-- [ ] Advanced chunking strategies
-- [ ] Conversation memory
-- [ ] Export chat logs
-- [ ] Dark mode UI toggle
-
----
-
-**Enter the void at your own risk. The doctor is waiting.** 💀
+#### Step 6: Pull AI Model
+Open a **new terminal** and run:
+```bash
+ollama serve
+```
+Then in your main terminal:
+```bash
+ollama pull llama2-uncensored
 ```
 
 ---
 
-## Setup Instructions Summary
+### 🪟 Windows Setup
 
-1. **Clone repo**: `git clone https://github.com/Apollyon13X/abyssai.git`
-2. **Run setup**: `cd abyssai && ./scripts/bootstrap.sh` (or manual venv setup)
-3. **Install Ollama**: From https://ollama.ai and run `ollama serve`
-4. **Pull model**: `ollama pull llama2-uncensored`
-5. **Add PDFs**: Place in `abyss_feed/` folder
-6. **Launch**: `streamlit run src/main.py`
-7. **Process PDFs**: Click button in UI to build index
-8. **Query**: Ask Doctor Apollyon your questions
+#### Step 1: Clone the Repository
+```powershell
+# In Windows Terminal or PowerShell
+git clone https://github.com/yourusername/abyssai.git
+cd abyssai
+```
+
+#### Step 2: Create Virtual Environment
+```powershell
+# Remove any broken venv first
+if (Test-Path .venv) { Remove-Item -Recurse -Force .venv }
+
+# Create fresh venv
+python -m venv .venv
+
+# Activate (Windows syntax - IMPORTANT!)
+.venv\Scripts\activate
+```
+
+#### Step 3: Install Dependencies
+```powershell
+# Upgrade pip first
+pip install --upgrade pip
+
+# Install requirements
+pip install -r requirements.txt
+```
+
+#### Step 4: Run Bootstrap Script
+```powershell
+# Windows doesn't need chmod
+.\scripts\bootstrap.sh
+
+# If the above fails, run the commands manually:
+# python -m pip install --upgrade pip
+# pip install -r requirements.txt
+```
+
+#### Step 5: Create Data Directory
+```powershell
+mkdir abyss_feed
+```
+
+#### Step 6: Pull AI Model
+1. Open **Ollama Desktop App** or
+2. Open a **new terminal** and run:
+```powershell
+ollama serve
+```
+Then in your main terminal:
+```powershell
+ollama pull llama2-uncensored
+```
+
+---
+
+### 🍎 Mac Setup
+
+#### Step 1: Clone the Repository
+```bash
+git clone https://github.com/yourusername/abyssai.git
+cd abyssai
+```
+
+#### Step 2: Create Virtual Environment
+```bash
+# Remove any broken venv first
+rm -rf .venv
+
+# Create fresh venv
+python3 -m venv .venv
+
+# Activate (Mac/Linux syntax)
+source .venv/bin/activate
+```
+
+#### Step 3: Install Dependencies
+```bash
+# Upgrade pip first
+pip install --upgrade pip
+
+# Install requirements
+pip install -r requirements.txt
+```
+
+#### Step 4: Make Bootstrap Executable
+```bash
+chmod +x scripts/bootstrap.sh
+./scripts/bootstrap.sh
+```
+
+#### Step 5: Create Data Directory
+```bash
+mkdir -p abyss_feed
+```
+
+#### Step 6: Pull AI Model
+Open a **new terminal** and run:
+```bash
+ollama serve
+```
+Then in your main terminal:
+```bash
+ollama pull llama2-uncensored
+```
+
+---
+
+## 📁 Project Structure After Setup
+```
+abyssai/
+├── .venv/                 # Virtual environment
+├── abyss_feed/            # YOUR PDFs GO HERE
+├── scripts/
+│   └── bootstrap.sh       # Setup script
+├── src/
+│   └── main.py           # Main application
+├── requirements.txt      # Python dependencies
+├── .gitignore           # Git ignore file
+├── abyss_index.faiss    # Generated search index
+└── abyss_meta.json      # Generated metadata
+```
+
+---
+
+## 🎯 Usage Instructions (All Platforms)
+
+### Step 1: Add Your PDFs
+Copy your PDF files into the `abyss_feed/` folder.
+
+### Step 2: Activate Virtual Environment
+**Linux/Mac:**
+```bash
+source .venv/bin/activate
+```
+
+**Windows:**
+```powershell
+.venv\Scripts\activate
+```
+
+### Step 3: Start Ollama
+In a **separate terminal**:
+```bash
+ollama serve
+```
+
+### Step 4: Launch AbyssAI
+In your main terminal:
+```bash
+streamlit run src/main.py
+```
+
+### Step 5: Access the Interface
+Open your browser and go to: **http://localhost:8501**
+
+### Step 6: Build Knowledge Base
+Click the **"Process PDFs"** button to index your documents.
+
+### Step 7: Start Chatting
+Ask questions about your PDFs in the chat interface!
+
+---
+
+## 🔧 Troubleshooting
+
+### Virtual Environment Issues
+
+| Problem | Linux/Mac Solution | Windows Solution |
+|---------|-------------------|------------------|
+| `command not found` | Use `source .venv/bin/activate` | Use `.venv\Scripts\activate` |
+| Can't deactivate | `deactivate` | `deactivate` |
+| Venv won't create | Install `python3-venv` | Reinstall Python with "Add to PATH" |
+
+### Pip Install Failures
+
+**On all platforms:**
+1. Ensure venv is activated (see prompt prefix `(.venv)`)
+2. Run `pip install --upgrade pip` first
+3. Check you're in the `abyssai/` directory: `pwd` or `cd`
+
+### Ollama Connection Errors
+
+**Error:** "Cannot connect to Ollama"
+- **Solution 1:** Run `ollama serve` in a **separate terminal**
+- **Solution 2:** Check Ollama is installed: `ollama --version`
+- **Solution 3:** Try `OLLAMA_HOST=0.0.0.0 ollama serve` (Linux/Mac)
+
+### Import Errors After Install
+
+**Error:** `ModuleNotFoundError: No module named 'streamlit'`
+- **Solution:** Re-run installation with venv active:
+  ```bash
+  source .venv/bin/activate  # or Windows equivalent
+  pip install -r requirements.txt
+  ```
+
+### Permission Denied (Linux/Mac)
+
+**Error:** `Permission denied: scripts/bootstrap.sh`
+- **Solution:** `chmod +x scripts/bootstrap.sh`
+
+### Memory Issues
+
+**Error:** "CUDA out of memory" or system hangs
+- **Solution:** Use smaller PDF batches, close other applications, or add more RAM
+
+### Port Already in Use
+
+**Error:** "Address already in use: 8501"
+- **Solution:** Kill other Streamlit processes or specify a different port:
+  ```bash
+  streamlit run src/main.py --server.port 8502
+  ```
+
+---
+
+## 🔄 Updating AbyssAI
+
+```bash
+# Activate venv first
+source .venv/bin/activate  # or Windows equivalent
+
+# Pull latest changes
+git pull origin main
+
+# Update dependencies
+pip install -r requirements.txt
+```
+
+---
+
+## 🗑️ Starting Fresh (If All Else Fails)
+
+**Linux/Mac:**
+```bash
+deactivate
+rm -rf .venv abyss_index.faiss abyss_meta.json
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+**Windows:**
+```powershell
+deactivate
+Remove-Item -Recurse -Force .venv
+Remove-Item abyss_index.faiss, abyss_meta.json
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+---
+
+## 🛡️ Security Note
+All processing happens **locally on your machine**. Your PDFs and data never leave your system.
+
+---
+
+## 📚 Need More Help?
+- Check the logs in your terminal for specific error messages
+- Ensure Ollama is running before starting Streamlit
+- Verify PDFs are in the `abyss_feed/` directory
+
+Happy hacking with your local AI knowledge base!
