@@ -1,4 +1,4 @@
-```python
+python
 import requests
 import json
 from typing import Dict, Any
@@ -60,4 +60,4 @@ def check_ollama_health() -> bool:
         print(f"❌ Cannot reach Ollama: {e}")
         print("Start Ollama first: ollama serve")
         return False
-```
+
