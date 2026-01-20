@@ -1,6 +1,29 @@
-faiss-cpu==1.7.4
-PyMuPDF==1.23.8  # Correct package name, not fitz==0.0.1.dev2
-numpy==1.26.4
-sentence-transformers==2.2.2
-streamlit==1.35.0
-requests==2.32.3
+
+# Python artefacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.dist-info/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Secrets
+.env
+*.key
+*.secret
+
+# Large data (PDFs, indexes, metadata)
+abyss_feed/
+abyss_index.faiss
+abyss_meta.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.log
