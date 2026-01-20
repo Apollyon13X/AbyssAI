@@ -1,9 +1,8 @@
-🚫 .gitignore
 # Python artefacts
-__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+__pycache__/
 *.egg-info/
 *.dist-info/
 
@@ -11,12 +10,14 @@ __pycache__/
 .venv/
 env/
 venv/
+ENV/
 
 # Secrets
 .env
-sk-kLSeGS.2c7344ead2cefd7f9f74d60e3d307cbc68fc1290b39863e01dbedc6f70d262ea
+*.key
+*.secret
 
-# Large data (PDFs, indexes, metadata)
+# AbyssAI data
 abyss_feed/
 abyss_index.faiss
 abyss_meta.json
@@ -24,3 +25,9 @@ abyss_meta.json
 # OS junk
 .DS_Store
 Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
