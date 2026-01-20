@@ -1,6 +1,6 @@
 
 # Python artefacts
-*.py[cod]
+*.py
 *.pyo
 *.pyd
 *.egg-info/
