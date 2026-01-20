@@ -1,4 +1,4 @@
-```python
+python
 import fitz  # PyMuPDF
 from pathlib import Path
 from typing import List
@@ -29,4 +29,4 @@ def split_chunks(txt: str, size: int = CHUNK_SIZE) -> List[str]:
             chunks.append(chunk)
     
     return chunks
-```
+
