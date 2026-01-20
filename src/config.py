@@ -1,4 +1,4 @@
-```python
+python
 from pathlib import Path
 import os
 
@@ -16,4 +16,4 @@ CHUNK_SIZE = 500  # ~tokens per chunk
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama2-uncensored")  # or "wizard-vicuna-uncensored", "solar", etc.
 OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "120"))  # seconds
-```
+
