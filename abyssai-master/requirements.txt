@@ -1,0 +1,19 @@
+# Core ML/AI stack
+streamlit>=1.29.0
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+
+# PDF processing
+pymupdf>=1.24.0          # fitz / PyMuPDF (used by pdf_utils)
+PyPDF2>=3.0.1            # kept for compatibility
+python-magic>=0.4.27
+
+# API and utilities
+requests>=2.31.0
+python-dotenv>=1.0.0
+httpx>=0.25.0
+
+# Data handling
+numpy>=1.24.0
+pandas>=2.0.0
+typing-extensions>=4.8.0
