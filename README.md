@@ -1,4 +1,4 @@
-Proceed to the https://github.com/Apollyon13X/AbyssAI/tree/main/abyssai-master for instruckions.
+Proceed to the https://github.com/Apollyon13X/AbyssAI/tree/main/abyssai-master for instructions.
 
 John McAfee didn't kill himself.
 There are a lot more of the targeted individuals today. For some of us they know they can't execute us. And they know we know that.
