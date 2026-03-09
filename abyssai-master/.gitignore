@@ -1,0 +1,32 @@
+# Python artefacts
+*.py[cod]
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+*.dist-info/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Secrets
+.env
+*.key
+*.secret
+#ApyssAI Data
+abyss_lessons/          
+abyss_index.faiss
+abyss_meta.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
