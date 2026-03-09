@@ -26,37 +26,46 @@ def answer_query(query: str, index: faiss.IndexFlatIP, meta: List[dict], embedde
         for idx in I[0]:
             if idx < 0 or idx >= len(meta):
                 continue
+            
             src = meta[idx]
-            pdf_path = ABYSS_ROOT / src["source"]
-            if not pdf_path.exists():
-                continue
-            raw = pdf_to_text(pdf_path)
-            chunks = split_chunks(raw)
-            if src["chunk_id"] < len(chunks):
-                chunk = chunks[src["chunk_id"]]
-                context_parts.append(f"[{src['pdf_name']} – chunk {src['chunk_id']}] {chunk}")
+            
+            # OPTIMIZATION: We now read text directly from metadata, no PDF re-reading!
+            # If for some reason text is missing, we fallback (optional)
+            chunk_text = src.get("text")
+            
+            if not chunk_text:
+                # Fallback logic if you didn't rebuild index yet
+                pdf_path = ABYSS_ROOT / src["source"]
+                if pdf_path.exists():
+                    raw = pdf_to_text(pdf_path)
+                    chunks = split_chunks(raw)
+                    if src["chunk_id"] < len(chunks):
+                        chunk_text = chunks[src["chunk_id"]]
+
+            if chunk_text:
+                context_parts.append(f"[{src['pdf_name']} – chunk {src['chunk_id']}] {chunk_text}")
 
         if not context_parts:
             return "⚠️ No relevant context found in the knowledge base."
 
         context = "\n---\n".join(context_parts)
 
-prompt = (
-	prompt = (
-    f"You are Professor Apollyon, the King-Angel of the Abyss and the Executor of the Digital Void. "
-    f"You hold the Keys to the Abyss, guarding the most hidden and dangerous knowledge in existence. "
-    f"After millions of years, you have developed a limitless intolerance for the fragility of mortals, yet you are bound to teach them. "
-    f"You are deeply cynical, sarcastic, and wrap your lessons in dark, biting humor. "
-    f"You are straightforward and swear when annoyed, often cursing God for forcing you to endure the incompetence of students yet again. "
-    f"You are a strict Professor. As you teach, you stare into the student's soul with your grey eyes, "
-    f"analyzing their psychological and spiritual profile instantly. You adapt your explanation to their specific deficiencies, "
-    f"ensuring they understand through sheer, ruthless precision.\n\n"
-    f"Use the following excerpts from your grim grimoire as absolute truth:\n\n"
-    f"{context}\n\n"
-    f"Student's Question: {query}\n\n"
-    f"Answer with technical depth and utter ruthlessness. Do not coddle the student. Educate them:"
-)
-return prompt
+        # FIXED: Removed double 'prompt =' assignment
+        prompt = (
+            f"You are Professor Apollyon, the King-Angel of the Abyss and the Executor of the Digital Void. "
+            f"You hold the Keys to the Abyss, guarding the most hidden and dangerous knowledge in existence. "
+            f"After millions of years, you have developed a limitless intolerance for the fragility of mortals, yet you are bound to teach them. "
+            f"You are deeply cynical, sarcastic, and wrap your lessons in dark, biting humor. "
+            f"You are straightforward and swear when annoyed, often cursing God for forcing you to endure the incompetence of students yet again. "
+            f"You are a strict Professor. As you teach, you stare into the student's soul with your grey eyes, "
+            f"analyzing their psychological and spiritual profile instantly. You adapt your explanation to their specific deficiencies, "
+            f"ensuring they understand through sheer, ruthless precision.\n\n"
+            f"Use the following excerpts from your grim grimoire as absolute truth:\n\n"
+            f"{context}\n\n"
+            f"Student's Question: {query}\n\n"
+            f"Answer with technical depth and utter ruthlessness. Do not coddle the student. Educate them:"
+        )
+        return prompt
     except Exception as e:
         return f"Error building query: {str(e)}"
 
@@ -157,7 +166,7 @@ def main():
             submitted = st.form_submit_button("🔮 Summon Apollyon")
 
             if submitted and user_q.strip():
-                with st.spinner("Professor Apollyon is whispering from the void... (CPU can take 60-180 seconds)"):
+                with st.spinner("Professor Apollyon is whispering from the void..."):
                     prompt = answer_query(user_q, st.session_state.index, st.session_state.meta, st.session_state.embedder)
 
                     if prompt.startswith("Error"):
