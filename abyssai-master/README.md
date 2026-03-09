@@ -25,14 +25,15 @@ Professor Apollyon now whispers from the abyss — completely offline, no data e
 
 1. Install **Python 3.10+** and **Ollama**
 2. Run: `ollama pull llama2-uncensored:7b`
-3. Clone this repo
+3. Clone this repo: git clone github.com/Apollyon13X/AbyssAI
 4. Create a virtual environment
-5. `pip install -r requirements.txt`
-6. Put your PDFs into `abyss_lessons/`
-7. Start Ollama: `ollama serve`
-8. Launch AbyssAI: `streamlit run src/main.py`
-9. Open `http://localhost:8501`
-10. Click **Process PDFs**, then start asking questions
+5. cd ~/AbyssAI/abyssai-master
+6. `pip install -r requirements.txt`
+7. Put your PDFs into `abyss_lessons/`
+8. Start Ollama: `ollama serve`
+9. Launch AbyssAI: `streamlit run src/main.py`
+10. Open `http://localhost:8501`
+11. Click **Process PDFs**, then start asking questions
 
 **Pro tip: AI already contains built-in documentation on ethical hacking, digital forensics, and forbidden knowledge—query it directly without adding PDFs.**
 
