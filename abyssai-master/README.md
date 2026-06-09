@@ -80,6 +80,88 @@ Ollama not found?
 → Run ollama serve in another terminal.
 Want even more time?
 Edit src/main.py and change timeout=777 to timeout=1800.
+---
+
+## 🚀 Quick Start (Windows)
+
+```bash
+
+Prerequisites:
+
+Python 3.10+: Download from python.org during installation, check "Add Python to PATH".
+Git: Download from git-scm.com.
+Ollama: Download the installer from ollama.ai/windows and run it.
+
+# 1. Open PowerShell as Administrator or Standard User
+cd ~\Documents
+git clone https://github.com/Apollyon13X/AbyssAI.git
+cd AbyssAI\abyssai-master
+
+# 2. Create & Activate Virtual Environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# 3. Install Dependencies
+pip install -r requirements.txt
+
+# 4. Pull the Model (Do this in a NEW terminal window first!)
+# Keep Ollama running in the background or this terminal
+ollama serve
+
+# 5. In the project terminal (where venv is active), launch the abyss
+streamlit run src/main.py
+
+# Open http://localhost:8501
+# First time: Click Process PDFs, then ask questions.
+Troubleshooting Windows:
+
+ActivationScripts\Activate.ps1 blocked? Run PowerShell as Admin and type: Set-ExecutionPolicy RemoteSigned.
+Port already in use? Close other Streamlit/Python instances or edit src/main.py to change server.address.port.
+Slow answers? Your CPU is working hard. The 777-second timeout is standard. Wait it out.
+
+'''
+
+## 🚀 Quick Start (macOS):
+```bash
+
+
+Prerequisites:
+
+Homebrew: If missing, run /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)".
+Python 3.10+: brew install python@3.10
+Git: brew install git (usually pre-installed, but good to verify).
+Ollama: Download DMG from ollama.ai/mac or run brew install ollama && ollama start.
+
+# 1. Open Terminal
+cd ~/Documents
+git clone https://github.com/Apollyon13X/AbyssAI.git
+cd AbyssAI/abyssai-master
+
+# 2. Create & Activate Virtual Environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3. Install Dependencies
+pip3 install -r requirements.txt
+
+# 4. Pull the Model (Run this in a SEPARATE tab/window)
+# Ensure Ollama is running before launching AbyssAI
+ollama pull llama2-uncensored:7b
+ollama serve
+
+# 5. Launch the abyss (in the main project terminal)
+streamlit run src/main.py
+
+# Open http://localhost:8551 in Safari or Chrome
+# First time: Click Process PDFs, then ask questions.
+Troubleshooting macOS:
+
+Permission Denied? You may need to allow "System Extension" in System Settings > Privacy & Security if Ollama blocks access.
+source command missing? Use .venv/bin/activate directly.
+Gatekeeper blocking Ollama? Right-click the Ollama app > Open.
+CPU Fan going wild? Normal for local inference. Adjust chunk size in src/config.py if it becomes unbearable.
+⚡ Note for All Platforms
+Pro tip: AI already contains built-in documentation on ethical hacking, digital forensics, and forbidden knowledge—query it directly without adding PDFs. Add your own grimoires to abyss_lessons/ later to expand its knowledge.
 
 🔧 Advanced Customization Examples
 AbyssAI is intentionally minimal and hackable. Here are common ways people customize it:
