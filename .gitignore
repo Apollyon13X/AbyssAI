@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+data/private/**
+!data/private/.keep
+adapters/**
+!adapters/.keep
+train/out/
+*.jsonl
+abyss_index.json
+*.gguf
+*.lora
+.env

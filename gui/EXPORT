@@ -1,0 +1,7 @@
+FROZEN GUI. Do not restyle.
+
+The live AbyssAI window (seal, crimson, bone type, library sheet, composer)
+is already compiled into ../src/main.py as the pywebview HTML.
+
+Do not edit colors, fonts, layout, or labels in that HTML.
+Backend/persona changes live in ../src/prompt.py only.
