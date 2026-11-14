@@ -29,10 +29,10 @@ All divination skills run locally on Dolphin 3B. The **skill itself** is paid �
 
 | Skill | Model | Access |
 |-------|-------|--------|
-| **Natal Chart** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Numerology** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Tarot** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Dream Interpretation** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
+| **Natal Chart** | All models (local) | Paid — DM @Apollyon13x |
+| **Numerology** | All models (local) | Paid — DM @Apollyon13x |
+| **Tarot** | All models (local) | Paid — DM @Apollyon13x |
+| **Dream Interpretation** | All models (local) | Paid — DM @Apollyon13x |
 
 ---
 
@@ -300,10 +300,10 @@ Cloudflare 301-redirects apex `theabyssai.space` → `www.theabyssai.space`, but
 
 | Skill | Model | Access |
 |-------|-------|--------|
-| **Natal Chart** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Numerology** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Tarot** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Dream Interpretation** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
+| **Natal Chart** | All models (local) | Paid — DM @Apollyon13x |
+| **Numerology** | All models (local) | Paid — DM @Apollyon13x |
+| **Tarot** | All models (local) | Paid — DM @Apollyon13x |
+| **Dream Interpretation** | All models (local) | Paid — DM @Apollyon13x |
 
 > **How to unlock:** Message **@Apollyon13x** on Telegram. State which skill(s) you want. Pay once. Lifetime access per skill. No subscriptions.
 

@@ -47,10 +47,10 @@ The following divination skills are **paid features**. Each skill is unlocked wi
 
 | Skill | Model | Access |
 |-------|-------|--------|
-| **Natal Chart** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Numerology** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Tarot** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Dream Interpretation** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
+| **Natal Chart** | All models (local) | Paid — DM @Apollyon13x |
+| **Numerology** | All models (local) | Paid — DM @Apollyon13x |
+| **Tarot** | All models (local) | Paid — DM @Apollyon13x |
+| **Dream Interpretation** | All models (local) | Paid — DM @Apollyon13x |
 
 > **How to unlock:** Message **@Apollyon13x** on Telegram. State which skill(s) you want. Pay once. Lifetime access per skill. No subscriptions.
 

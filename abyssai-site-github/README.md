@@ -92,10 +92,10 @@ Testers and white hats are highly valued. In the $ABYSS ecosystem, testers and s
 The following divination skills are **paid features**. Each skill is unlocked with a **one-time payment** via Telegram DM to **@Apollyon13x**. Lifetime access per skill. No subscriptions.
 | Skill | Model | Access |
 |-------|-------|--------|
-| **Natal Chart** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Numerology** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Tarot** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
-| **Dream Interpretation** | Dolphin 3B (local) | Paid — DM @Apollyon13x |
+| **Natal Chart** | All models (local) | Paid — DM @Apollyon13x |
+| **Numerology** | All models (local) | Paid — DM @Apollyon13x |
+| **Tarot** | All models (local) | Paid — DM @Apollyon13x |
+| **Dream Interpretation** | All models (local) | Paid — DM @Apollyon13x |
 
 ---
 
