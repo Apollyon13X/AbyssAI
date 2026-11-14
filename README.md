@@ -60,7 +60,7 @@ The following divination skills are **paid features**. Each skill is unlocked wi
 
 **Contract Address:** `0x430025c01d47a75a5f36d57e8c76969de3753333` (BSC)
 
-**Buy $ABYSS on $QOMX Launchpad (LIVE):** https://launch.qomx.io/launch/0x430025c01d47a75a5f36d57e8c76969de3753333
+**Buy $ABYSS on $QOMX DEX (LIVE):** https://dex.qomx.io/swap?from=0x430025c01d47a75a5f36d57e8c76969de3753333&to=0xC9e127bFcA0b16c276444FdC9600EE876281a831
 
 **$ABYSS Governance:** Top holders will be able to decide on further development, suggest features, and get early access.
 
@@ -161,7 +161,7 @@ We study manipulation to detect and resist it. We do not optimize for manipulati
 - **Website:** https://theabyssai.space
 - **Advisory:** https://theabyssai.space/the_professor_advisory
 - **GitHub:** https://github.com/apollyon13x/abyssai
-- **Launchpad:** https://launch.qomx.io/launch/0x430025c01d47a75a5f36d57e8c76969de3753333
+- **DEX:** https://dex.qomx.io/swap?from=0x430025c01d47a75a5f36d57e8c76969de3753333&to=0xC9e127bFcA0b16c276444FdC9600EE876281a831
 - **Telegram (paid divination skills):** @Apollyon13x
 - **Admin:** death@theabyssai.space
 - **Tech support:** the_tech_executor@theabyssai.space
