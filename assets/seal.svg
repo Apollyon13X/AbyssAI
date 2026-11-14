@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- AbyssAI heptagram seal. Logo / header / desktop icon. Accent #c45c4a -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#c45c4a" stroke-width="1.2" opacity="0.55"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#c45c4a" stroke-width="0.6" opacity="0.35"/>
+  <circle cx="100" cy="100" r="38" fill="none" stroke="#c45c4a" stroke-width="0.8" opacity="0.45"/>
+  <circle cx="100" cy="100" r="6" fill="#c45c4a" opacity="0.7"/>
+  <path d="M 100.0 28.0 L 131.2 164.9 L 43.7 55.1 L 170.2 116.0 L 29.8 116.0 L 156.3 55.1 L 68.8 164.9 L 100.0 28.0"
+        fill="none" stroke="#c45c4a" stroke-width="1.1" opacity="0.8"/>
+  <line x1="176.0" y1="100.0" x2="190.0" y2="100.0" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="177.3" y1="120.7" x2="186.9" y2="123.3" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="169.3" y1="140.0" x2="177.9" y2="145.0" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="153.7" y1="153.7" x2="163.6" y2="163.6" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="140.0" y1="169.3" x2="145.0" y2="177.9" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="120.7" y1="177.3" x2="123.3" y2="186.9" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="100.0" y1="176.0" x2="100.0" y2="190.0" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="79.3" y1="177.3" x2="76.7" y2="186.9" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="60.0" y1="169.3" x2="55.0" y2="177.9" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="46.3" y1="153.7" x2="36.4" y2="163.6" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="30.7" y1="140.0" x2="22.1" y2="145.0" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="22.7" y1="120.7" x2="13.1" y2="123.3" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="24.0" y1="100.0" x2="10.0" y2="100.0" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="22.7" y1="79.3" x2="13.1" y2="76.7" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="30.7" y1="60.0" x2="22.1" y2="55.0" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="46.3" y1="46.3" x2="36.4" y2="36.4" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="60.0" y1="30.7" x2="55.0" y2="22.1" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="79.3" y1="22.7" x2="76.7" y2="13.1" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="100.0" y1="24.0" x2="100.0" y2="10.0" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="120.7" y1="22.7" x2="123.3" y2="13.1" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="140.0" y1="30.7" x2="145.0" y2="22.1" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="153.7" y1="46.3" x2="163.6" y2="36.4" stroke="#c45c4a" stroke-width="1.2" opacity="0.45"/>
+  <line x1="169.3" y1="60.0" x2="177.9" y2="55.0" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+  <line x1="177.3" y1="79.3" x2="186.9" y2="76.7" stroke="#c45c4a" stroke-width="0.6" opacity="0.45"/>
+</svg>

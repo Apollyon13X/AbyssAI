@@ -1,0 +1,74 @@
+/* ABYSSAI — THE PROFESSOR'S ADVISORY · portal styles */
+body.portal-body{padding-top:0;height:100vh;overflow:hidden}
+.grain{z-index:3}
+
+/* TOPBAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 18px;background:rgba(5,6,10,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.timer-chip{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--gold-hi);
+  border:1px dashed rgba(201,161,90,.5);padding:7px 10px;white-space:nowrap}
+.timer-chip.severe{color:#ff6b6b;border-color:#7e1e2a;animation:pulse-red 1.2s ease-in-out infinite}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 6px rgba(126,30,42,.5)}50%{box-shadow:0 0 20px rgba(126,30,42,.9)}}
+
+/* ARRIVAL WARNING */
+.arrive-warn{position:fixed;top:52px;left:0;right:0;z-index:55;text-align:center;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.1em;color:var(--gold-hi);background:rgba(20,10,4,.85);border-bottom:1px solid rgba(201,161,90,.25);padding:7px 12px}
+.arrive-warn b{color:#ffca85}
+
+/* FRAME */
+.portal-frame{position:fixed;inset:86px 0 0 0;display:flex;overflow:hidden}
+.portal-side{width:250px;flex:0 0 250px;border-right:1px solid var(--line);background:#07080d;overflow-y:auto;padding:20px 14px}
+.side-title{font-family:var(--serif);font-size:.7rem;letter-spacing:.28em;color:var(--faint);margin-bottom:14px}
+#threadList{list-style:none;display:flex;flex-direction:column;gap:8px}
+#threadList li{display:flex;align-items:center;gap:6px;border:1px solid var(--line);padding:8px 10px;cursor:pointer;background:#0a0c12}
+#threadList li:hover{border-color:var(--gold)}
+#threadList li.active{border-color:var(--gold);box-shadow:0 0 14px rgba(201,161,90,.12)}
+#threadList .t-title{flex:1;font-size:.78rem;color:var(--ink);line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#threadList .t-date{display:block;font-family:var(--mono);font-size:.54rem;color:var(--faint);letter-spacing:.08em}
+#threadList .t-del{background:none;border:none;color:var(--faint);cursor:pointer;font-size:.8rem}
+#threadList .t-del:hover{color:#b3373f}
+.side-foot{margin-top:18px;line-height:1.6}
+.portal-main{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.portal-form{border-top:1px solid var(--line)}
+.portal-foot{padding:7px 16px;border-top:1px solid var(--line);line-height:1.6}
+.portal-main .chat-log{padding:26px clamp(16px,6vw,72px) 18px}
+
+/* EXPORT MENU */
+.export-menu{position:relative}
+.export-drop{display:none;position:absolute;top:calc(100% + 6px);right:0;z-index:70;min-width:270px;
+  background:#0d0f16;border:1px solid var(--gold);padding:6px}
+.export-menu.open .export-drop{display:block}
+.export-drop button{display:block;width:100%;text-align:left;background:none;border:none;color:var(--ink);
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;padding:10px 12px;cursor:pointer;text-transform:uppercase}
+.export-drop button:hover{background:var(--gold);color:#0a0805}
+
+/* ENTER-THE-ABYSS FLAME (home gate) */
+.btn.flame-blood{border-color:var(--blood);color:#ffd7d7;
+  background:linear-gradient(180deg,#3a0d12,#1a070a);position:relative;
+  animation:flame 1.6s ease-in-out infinite;border-radius:2px}
+@keyframes flame{
+  0%,100%{box-shadow:0 0 10px rgba(179,86,46,.5),0 0 30px rgba(126,30,42,.35),inset 0 0 12px rgba(255,80,60,.15)}
+  50%{box-shadow:0 0 22px rgba(233,90,60,.85),0 0 60px rgba(126,30,42,.6),inset 0 0 22px rgba(255,120,80,.35)}
+}
+.btn.flame-blood:hover{color:#fff;background:linear-gradient(180deg,#5a141c,#24090c)}
+
+/* LOCK */
+.portal-lock{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;text-align:center;padding:30px;background:radial-gradient(ellipse at 50% 30%,#161019,#05060a 65%)}
+.portal-lock .lock-seal{width:74px;height:74px;border-radius:50%;border:1px solid var(--gold);filter:drop-shadow(0 0 22px rgba(201,161,90,.4))}
+.portal-lock .gate-row{display:grid;grid-template-columns:5rem 1fr 1fr 2rem;gap:10px;padding:9px 12px;margin-bottom:8px}
+.portal-lock #lockRows{min-width:min(460px,90vw)}
+.portal-lock .lock-title{margin-top:2px}
+
+/* MISC */
+.btn-small{padding:9px 12px}
+@media(max-width:760px){
+  .portal-side{position:absolute;left:0;top:0;bottom:0;z-index:40;transform:translateX(-100%);transition:.25s;box-shadow:20px 0 60px rgba(0,0,0,.6)}
+  .portal-side.open{transform:none}
+  .portal-frame{inset:110px 0 0 0}
+  .topbar{flex-wrap:wrap;padding:8px 10px}
+  .top-actions{gap:6px}
+}
+.side-toggle{display:none;position:absolute;top:10px;left:10px;z-index:50}
+@media(max-width:760px){.side-toggle{display:inline-block}}

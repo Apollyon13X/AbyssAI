@@ -1,0 +1,21 @@
+# Session exports and credentials - do not commit
+abyssai---cloud-local.json
+abyssai-credentials-and-backup-revert.json
+*.log
+*.tmp
+*.DS_Store
+__pycache__/
+*.pyc
+.venv/
+data/private/**
+!data/private/.keep
+adapters/**
+!adapters/.keep
+train/out/
+*.jsonl
+abyss_index.json
+*.gguf
+*.lora
+.env
+*.pdf
+*.pdf

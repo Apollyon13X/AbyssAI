@@ -1,0 +1,18 @@
+# ABYSSAI · theabyssai.space
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^the_professor_advisory/?$ /the_professor_advisory.html [L]
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "same-origin"
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 2 hours"
+  ExpiresByType application/javascript "access plus 2 hours"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+</IfModule>

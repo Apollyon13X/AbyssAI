@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE PROFESSOR'S ADVISORY — AbyssAI · Whispers From The Void ☠</title>
+<meta name="description" content="The full advisory: Professor Apollyon in the open — holders only. Thirteen days of record, export to PDF or DOCX, sync previous workings, and the Archives of the Void (archive.org, filtered for those rebuilding).">
+<link rel="icon" type="image/png" href="assets/TG_Group_PFP.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/portal.css">
+</head>
+<body class="portal-body">
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/TG_Group_PFP.png" alt="AbyssAI seal">
+    <span>ABYSSAI · THE ADVISORY</span>
+  </a>
+  <div class="top-actions">
+    <span class="timer-chip" id="archiveTimer">—</span>
+    <button class="btn btn-ghost btn-small" id="btnArchives">ARCHIVES·OFF</button>
+    <div class="export-menu">
+      <button class="btn btn-ghost btn-small" id="btnExports">EXPORTS ▾</button>
+      <div class="export-drop" id="exportDrop">
+        <button data-export="pdf">PDF · this working</button>
+        <button data-export="docx">DOCX · this working</button>
+        <button data-export="json">SYNC FILE .json ↓ all workings</button>
+        <button data-import="1">LOAD SYNC FILE ↑</button>
+        <input type="file" id="importFile" accept=".json,application/json" hidden>
+      </div>
+    </div>
+    <button class="btn btn-ghost btn-small" id="btnNew">NEW WORKING</button>
+    <a class="btn btn-ghost btn-small" href="index.html">EXIT</a>
+  </div>
+</header>
+
+<div class="arrive-warn" id="arriveWarn">
+  ◆ ARRIVAL WARNING: your workings hold for <b>13 days</b> — then the void takes them. EXPORT before it does. Remaining: <b id="arriveLeft">—</b> ◆
+</div>
+
+<div class="portal-frame">
+
+  <aside class="portal-side">
+    <h3 class="side-title">WORKINGS</h3>
+    <ul id="threadList"></ul>
+    <p class="micro side-foot">13-day shelf. Erased threads do not haunt the server — they haunt no one.</p>
+  </aside>
+
+  <main class="portal-main">
+    <button class="btn btn-ghost btn-small side-toggle" id="sideToggle">☰ WORKINGS</button>
+    <div class="chat-log" id="chatLog"></div>
+
+    <form class="chat-form portal-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="State your wound, holder…" maxlength="4000" autocomplete="off">
+      <button type="submit" id="chatSend" aria-label="Send">SEND</button>
+    </form>
+    <div class="micro portal-foot">Not therapy. Crisis → your local emergency services or <a href="https://www.iasp.info/suicidalthoughts/" target="_blank" rel="noopener">IASP</a>. Archives pull from archive.org's public shelves only. Never a playbook to prey.</div>
+  </main>
+</div>
+
+<!-- ENTRANCE LOCK -->
+<div class="portal-lock" id="portalLock">
+  <img src="assets/TG_Group_PFP.png" alt="" class="lock-seal">
+  <p class="lock-title">THE SEAL IS UNJUDGED</p>
+  <p class="micro">The Advisory is sealed to holders. Prove on-chain:<br><b>17,000,000 $ABYSS</b> and <b>3,333 $QOMX</b> — both, not or.</p>
+  <div id="lockRows">
+    <div class="gate-row" id="rowAbyssLock"><span class="tok">$ABYSS</span><span class="req mono-note">≥ 17,000,000</span><span class="val mono-note" id="valAbyssLock">—</span><span class="mark" id="markAbyssLock">✗</span></div>
+    <div class="gate-row" id="rowQomxLock"><span class="tok">$QOMX</span><span class="req mono-note">≥ 3,333</span><span class="val mono-note" id="valQomxLock">—</span><span class="mark" id="markQomxLock">✗</span></div>
+  </div>
+  <div class="caretaker-ledger" id="caretakerLedgerLock">
+    <p class="ledger-title">◈ CARETAKER LEDGER — struck once at seal creation, never re-levied</p>
+    <p class="micro">$ABYSS 10% of the initial 17,000,000 (7% ops + 3% CEO) · $QOMX 3% of the initial 3,333 · caretaker 0x1b84…EBC</p>
+  </div>
+  <button class="btn btn-primary" id="lockVerify">Prove Holding</button>
+  <a class="btn btn-ghost" href="index.html">Back to the gate</a>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/seal-common.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.min.js" defer></script>
+<script src="https://unpkg.com/docx@8.5.0/build/index.umd.js" defer></script>
+<script src="assets/portal.js" defer></script>
+</body>
+</html>

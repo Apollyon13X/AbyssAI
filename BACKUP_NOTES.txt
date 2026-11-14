@@ -1,0 +1,88 @@
+ABYSSAI WEB OPERATIONS — BACKUP STATE (2026-10-25, REVISED)
+===========================================================
+
+WHAT'S IN HERE
+--------------
+abyssai-site/            Canonical working copy of the live site (deploys to
+                         public_html on the cPanel host). Contains api.php —
+                         THE ONLY FILE WITH THE API KEY INSIDE. If this zip
+                         ever leaves your machine, redact the $API_KEY line.
+abyssai-site-github/     Sanitized staging copy for the GitHub Pages push
+                         (repo: apollyon13x/abyssai-site). 14 files, ZERO key
+                         traces (grep-verified after re-check). api.php and
+                         .htaccess intentionally excluded. chat.js INCLUDED
+                         (Pages-aware ENDPOINTS; cross-origin handled by
+                         api.php CORS headers). README.md = full web-tier
+                         revamp (og.jpg + vault.jpg hero images from assets/).
+home/ghost/AbyssAI/README.md   Revamped desktop-repo README (full per-OS
+                         install guides + Cloud vs Local table + Dolphin 3B
+                         local brain). The model stays LOCAL-ONLY.
+BACKUP_NOTES.txt         This file.
+
+LIVE STATE (as of backup)
+-------------------------
+- Landing page:         https://theabyssai.space/ (cPanel, FTP via server306)
+- Advisory (Oracle):    https://theabyssai.space/the_professor_advisory
+- api.php copies:       /public_html/api.php and /public_html/api/api.php
+                        (both current: leading-assistant trim + CORS +
+                        system prompt)
+- Caretaker ledger:     struck ONCE per agreement (7% of 13M $ABYSS = 910,000
+                        one-time caretaker fee; 4% of 1,111 $QOMX = 44.44),
+                        constants in gate.js LEDGER block; caretaker 0x1b84ff8487A5b773a50a3110
+                        15f86849da720EBC.
+- Gate:                 verifies 13,000,000 $ABYSS AND 1,111 $QOMX on BSC
+                        (0x4300...3333 / 0xC9e1...a831, chain 56). Seal in
+                        localStorage "abyss.seal.ok".
+- Portal:               13-day retention, PDF/DOCX exports, JSON sync
+                        import/export, ARCHIVES mode, thread sidebar.
+- Rate limit:           77 requests/24hrs/IP via api.php limiter.
+
+DNS / MAIL (current design — Cloudflare owns the zone)
+------------------------------------------------------
+- Nameservers:          brian.ns.cloudflare.com + lisa.ns.cloudflare.com
+                        (switched at Namecheap 2026-10-25; cPanel Zone Editor
+                        is obsolete for DNS — ALL future DNS edits happen in
+                        Cloudflare).
+- A records kept:       apex -> 192.64.117.221 (site + api.php live here),
+                        www CNAME -> apex (GitHub cut-over pending).
+- Email Routing:        Cloudflare Email Routing ENABLED (zone active).
+                        MX x3 (route1/2/3.mx.cloudflare.net) + SPF
+                        include:_spf.mx.cloudflare.net. DMARC kept, rua ->
+                        apollyonx13x@proton.me.
+- Routing rules (live): death@ / the_tech_executor@ / jackthereaper@ ->
+                        apollyonx13x@proton.me; cfprobe@ ->
+                        jackthereaper@aster.cx (delivery self-test).
+                        Catch-all: disabled (unknown recipients bounce
+                        550 5.1.1). Unauthenticated senders rejected
+                        550 5.7.26 by policy — correct behavior.
+- Propagation note:     cf dash warns rules can take up to 48h to reach all
+                        MX edges. Delivery self-test (Aster -> cfprobe@ ->
+                        Aster inbox echo) pending propagation.
+- Aster alias lock:     jackthereaper@theabyssai.space alias deletable
+                        after Nov 24 2026 (free-plan 30-day lock). Harmless.
+- cPanel mailbox:       death@theabyssai.space exists but is dead weight
+                        (mail now forwards via CF). Safe to delete.
+
+REMINDERS (rotate these)
+------------------------
+1. ROTATE (lived in plaintext chat):
+   - cPanel password (https://server306.web-hosting.com:2083)
+   - the API key inside api.php ($API_KEY constant) — NEVER commit to git.
+     ROTATED 2026-10-27: Experiential Labs key (xpl_…), model glm-5.3-flash,
+     endpoint https://api.experientiallabs.ai/v1/chat/completions. Edit BOTH
+     api.php copies on the host when rotating again.
+   - Cloudflare account password
+   - Aster account password (jackthereaper@aster.cx)
+   - the temporary death@theabyssai.space webmail password
+2. GitHub Pages migration (Phase A):
+   - Create repo `abyssai-site`, upload the 14 files from
+     abyssai-site-github/ (CNAME already contains www.theabyssai.space).
+   - GitHub Pages -> Deploy from branch main/root -> custom domain
+     www.theabyssai.space -> enforce HTTPS.
+   - Say "DONE WITH GITHUB" -> flip in CLOUDFLARE (not cPanel):
+     www CNAME -> apollyon13x.github.io + apex 301 redirect to
+     https://www.theabyssai.space/$1 (exempt /api.php).
+3. Desktop app stays open-source forever (repo apollyon13x/abyssai).
+   Its README lives at /home/ghost/AbyssAI/README.md (also in this zip).
+4. Long JS/CSS cache TTLs on the host: hard-refresh (Ctrl+Shift+R) after
+   any asset deploy.
