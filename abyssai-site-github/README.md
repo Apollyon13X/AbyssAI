@@ -46,7 +46,7 @@ This repository carries the **public web presence** of AbyssAI — the landing p
 
 ### Deploy notes (this repo)
 
-- Static site — GitHub Pages with custom domain `www.theabyssai.space` (`CNAME` included).
+- Static site — GitHub Pages with custom domain `www.abyssai.space` (`CNAME` included).
 - `the_professor_advisory.html` calls the proxy endpoint on the apex — cross-origin handled by the site's headers; no backend code lives here, by design.
 - The desktop app remains **open-source forever** — pinned on the site, audited by anyone: **[apollyon13x/abyssai](https://github.com/apollyon13x/abyssai)**.
 
@@ -116,8 +116,8 @@ https://dex.qomx.io/swap?from=0x430025c01d47a75a5f36d57e8c76969de3753333&to=0xC9
 
 ## Contact
 
-- **Admin:** `death@theabyssai.space`
-- **Tech support:** `the_tech_executor@theabyssai.space`
+- **Admin:** `death@abyssai.space`
+- **Tech support:** `the_tech_executor@abyssai.space`
 - **Telegram (paid divination skills):** @Apollyon13x
 
 <div align="center">

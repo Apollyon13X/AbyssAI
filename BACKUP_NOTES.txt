@@ -21,8 +21,8 @@ BACKUP_NOTES.txt         This file.
 
 LIVE STATE (as of backup)
 -------------------------
-- Landing page:         https://theabyssai.space/ (cPanel, FTP via server306)
-- Advisory (Oracle):    https://theabyssai.space/the_professor_advisory
+- Landing page:         https://abyssai.space/ (cPanel, FTP via server306)
+- Advisory (Oracle):    https://abyssai.space/the_professor_advisory
 - api.php copies:       /public_html/api.php and /public_html/api/api.php
                         (both current: leading-assistant trim + CORS +
                         system prompt)
@@ -58,9 +58,9 @@ DNS / MAIL (current design — Cloudflare owns the zone)
 - Propagation note:     cf dash warns rules can take up to 48h to reach all
                         MX edges. Delivery self-test (Aster -> cfprobe@ ->
                         Aster inbox echo) pending propagation.
-- Aster alias lock:     jackthereaper@theabyssai.space alias deletable
+- Aster alias lock:     jackthereaper@abyssai.space alias deletable
                         after Nov 24 2026 (free-plan 30-day lock). Harmless.
-- cPanel mailbox:       death@theabyssai.space exists but is dead weight
+- cPanel mailbox:       death@abyssai.space exists but is dead weight
                         (mail now forwards via CF). Safe to delete.
 
 REMINDERS (rotate these)
@@ -73,15 +73,15 @@ REMINDERS (rotate these)
      api.php copies on the host when rotating again.
    - Cloudflare account password
    - Aster account password (jackthereaper@aster.cx)
-   - the temporary death@theabyssai.space webmail password
+   - the temporary death@abyssai.space webmail password
 2. GitHub Pages migration (Phase A):
    - Create repo `abyssai-site`, upload the 14 files from
-     abyssai-site-github/ (CNAME already contains www.theabyssai.space).
+     abyssai-site-github/ (CNAME already contains www.abyssai.space).
    - GitHub Pages -> Deploy from branch main/root -> custom domain
-     www.theabyssai.space -> enforce HTTPS.
+     www.abyssai.space -> enforce HTTPS.
    - Say "DONE WITH GITHUB" -> flip in CLOUDFLARE (not cPanel):
      www CNAME -> apollyon13x.github.io + apex 301 redirect to
-     https://www.theabyssai.space/$1 (exempt /api.php).
+     https://www.abyssai.space/$1 (exempt /api.php).
 3. Desktop app stays open-source forever (repo apollyon13x/abyssai).
    Its README lives at /home/ghost/AbyssAI/README.md (also in this zip).
 4. Long JS/CSS cache TTLs on the host: hard-refresh (Ctrl+Shift+R) after

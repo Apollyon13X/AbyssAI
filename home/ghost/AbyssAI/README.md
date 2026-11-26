@@ -62,7 +62,7 @@ There are two doors to the same Professor — and the brain behind each is the d
 | Private shelves | none — no attachments, no archives | your PDF library, indexed **on your disk**, never uploaded |
 | Privacy | nothing of yours is archived by the web tier | nothing of yours leaves the machine — not even the index |
 
-Web tier: [apollyon13x/abyssai-site](https://github.com/apollyon13x/abyssai-site) · live at [www.theabyssai.space](https://www.theabyssai.space)
+Web tier: [apollyon13x/abyssai-site](https://github.com/apollyon13x/abyssai-site) · live at [www.abyssai.space](https://www.abyssai.space)
 
 ---
 

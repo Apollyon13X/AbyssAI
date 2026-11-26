@@ -263,7 +263,7 @@ node upload-abyssai.mjs
 
 ### Current state
 
-- Live site: `https://theabyssai.space/` (cPanel, FTP via server306, user `theaettj`)
+- Live site: `https://abyssai.space/` (cPanel, FTP via server306, user `theaettj`)
 - Stable backup: `/home/ghost/Documents/Default Project/abyssai-site/` (14 files)
 - GitHub staging: `/home/ghost/Documents/Default Project/abyssai-site-github/`
 - API key: `xpl_30ed2e44bb419ab94ea912a45babd25d534a9ce0` (Experiential Labs, `glm-5.3-flash`)
@@ -275,7 +275,7 @@ node upload-abyssai.mjs
 
 ### Known blocker
 
-Cloudflare 301-redirects apex `theabyssai.space` → `www.theabyssai.space`, but `www` points to GitHub Pages which isn't serving. Fix in Cloudflare dashboard: remove/delete the redirect rule and/or repoint `www` CNAME.
+Cloudflare 301-redirects apex `abyssai.space` → `www.abyssai.space`, but `www` points to GitHub Pages which isn't serving. Fix in Cloudflare dashboard: remove/delete the redirect rule and/or repoint `www` CNAME.
 
 ---
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * ABYSSAI — web-oracle proxy · theabyssai.space
+ * ABYSSAI — web-oracle proxy · abyssai.space
  *
  * Browser  →  this proxy  →  Experiential Labs gateway (glm-5.3-uncensored)
  * The API key lives ONLY here, server-side. Never emitted to any client.
@@ -69,8 +69,8 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: same-origin');
 header('Vary: Origin');
 
-// CORS: the GitHub Pages frontend (www.theabyssai.space after cut-over) calls this proxy cross-origin.
-$PAGES_ORIGINS = ['https://www.theabyssai.space', 'https://theabyssai.space'];
+// CORS: the GitHub Pages frontend (www.abyssai.space after cut-over) calls this proxy cross-origin.
+$PAGES_ORIGINS = ['https://www.abyssai.space', 'https://abyssai.space'];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if (in_array($origin, $PAGES_ORIGINS, true)) {
     header('Access-Control-Allow-Origin: ' . $origin);

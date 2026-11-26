@@ -1,4 +1,4 @@
-/* ABYSSAI — THE PROFESSOR'S ADVISORY · theabyssai.space/the_professor_advisory
+/* ABYSSAI — THE PROFESSOR'S ADVISORY · abyssai.space/the_professor_advisory
    Full-page Oracle. Seal-checked entry. 13-day history shelf with PDF/DOCX export,
    .json sync files (import = merge). Optional ARCHIVES mode pulls public-domain
    passages from archive.org (filtered shelves: psychology, propaganda/influence
@@ -9,7 +9,7 @@
 
   var RETENTION_MS = 13 * 24 * 3600 * 1000;
   var STORE_KEY = "abyss.threads.v2";
-  var ENDPOINTS = ["https://theabyssai.space/api.php", "api.php"];
+  var ENDPOINTS = ["https://abyssai.space/api.php", "api.php"];
   var UNWELCOMES = [
     "Who dares interrupt my executions?", "Who dares summoning me?",
     "Who knocks at the void and expects a kind tutor?",
@@ -298,7 +298,7 @@
   // ---------- exports ----------
   function threadToText(t) {
     var lines = [
-      "PROFESSOR APOLLYON'S ADVISORY — ABYSSAI · theabyssai.space",
+      "PROFESSOR APOLLYON'S ADVISORY — ABYSSAI · abyssai.space",
       "Working: " + threadTitle(t),
       "Opened: " + new Date(t.created).toISOString().slice(0, 16).replace("T", " ") + " UTC",
       "Holder: " + (AB.addr() || "unjudged"),

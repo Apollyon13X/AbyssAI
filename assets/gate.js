@@ -1,4 +1,4 @@
-/* ABYSSAI — Holders' Gate (index.html) · theabyssai.space
+/* ABYSSAI — Holders' Gate (index.html) · abyssai.space
    Verify 17,000,000 $ABYSS AND 3,333 $QOMX on BSC.
    On pass: the button ignites into ENTER THE ABYSS and leads to
    /the_professor_advisory. Reads go to a public BSC RPC (AB module). */

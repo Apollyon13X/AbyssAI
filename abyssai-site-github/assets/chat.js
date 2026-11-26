@@ -1,4 +1,4 @@
-/* ABYSSAI — web oracle client · theabyssai.space
+/* ABYSSAI — web oracle client · abyssai.space
    Talks only to same-origin api.php. API key never touches the browser. */
 (function () {
   "use strict";
@@ -30,7 +30,7 @@
 
   /* The proxy lives on the apex (cPanel) and survives the GitHub Pages cut-over.
      Absolute URL first — correct from any host — same-origin as fallback for local testing. */
-  var ENDPOINTS = ["https://theabyssai.space/api.php", "api.php"];
+  var ENDPOINTS = ["https://abyssai.space/api.php", "api.php"];
 
   var history = []; // [{role,body}] — browser-side only; server gets last 14
   var busy = false;

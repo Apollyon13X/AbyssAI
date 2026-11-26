@@ -91,9 +91,9 @@ Seal stored in `localStorage` — you are the seal. Sealed, not stored.
 
 ---
 
-## Web Oracle — theabyssai.space
+## Web Oracle — abyssai.space
 
-**Live:** https://theabyssai.space *(currently suspended at host — contact server306.web-hosting.com to restore)*
+**Live:** https://abyssai.space *(currently suspended at host — contact server306.web-hosting.com to restore)*
 
 **Oracle proxy (`api.php`):** Browser → proxy → Experiential Labs gateway. The API key lives server-side only. Model: `glm-5.3-flash`. Rate limit: 77 requests/24hrs/IP.
 
@@ -158,13 +158,13 @@ We study manipulation to detect and resist it. We do not optimize for manipulati
 
 ## Contact
 
-- **Website:** https://theabyssai.space
-- **Advisory:** https://theabyssai.space/the_professor_advisory
+- **Website:** https://abyssai.space
+- **Advisory:** https://abyssai.space/the_professor_advisory
 - **GitHub:** https://github.com/apollyon13x/abyssai
 - **DEX:** https://dex.qomx.io/swap?from=0x430025c01d47a75a5f36d57e8c76969de3753333&to=0xC9e127bFcA0b16c276444FdC9600EE876281a831
 - **Telegram (paid divination skills):** @Apollyon13x
-- **Admin:** death@theabyssai.space
-- **Tech support:** the_tech_executor@theabyssai.space
+- **Admin:** death@abyssai.space
+- **Tech support:** the_tech_executor@abyssai.space
 
 ---
 
